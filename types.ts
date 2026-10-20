@@ -2,16 +2,20 @@ export interface Experience {
   id: string;
   role: string;
   company: string;
+  client?: string;
   location: string;
-  period: string;
+  periods: string[];
+  type: string;
   description: string[];
 }
 
 export interface Project {
   id: string;
   title: string;
-  category: string;
-  description: string;
+  context: string;
+  date: string;
+  award?: string;
+  description: string[];
   tech: string[];
   links?: {
     label: string;
@@ -24,9 +28,15 @@ export interface Skill {
   items: string[];
 }
 
-export interface Message {
-  id: string;
-  role: 'user' | 'model';
-  text: string;
-  timestamp: Date;
+export interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  note?: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer?: string;
+  date?: string;
 }
